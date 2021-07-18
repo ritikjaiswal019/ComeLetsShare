@@ -1,0 +1,107 @@
+{% extends 'web/basicLayout.html' %}
+
+{% block csslinks %} 
+{% load static %}
+<link rel="stylesheet" href="{% static 'web/css/upcomingEvents.css' %}">
+{% endblock %}
+
+{% block title %}
+    Upcoming Events
+{% endblock %}
+
+{% block isevents %}active{% endblock %}
+
+
+{% block body %}
+{% load static %}
+<div class="event-head">
+    <div class="container">
+        <h1>Upcoming Events</h1>
+        <ul class="">
+            <li><a href="{% url 'homePage' %}">Home</a></li>
+            <li>/</li>
+            <li><a href="{% url 'upcomingEvents' %}"> Upcoming Events</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="row upcoming-event">
+        <div class="col-lg-6 event-img">
+            <img src="/media/{{allEvents.0.main_image}}" alt="">
+        </div>
+        <div class="col-lg-6 event-content">
+            <h2 class="text-center">{{allEvents.0.title}}</h2>
+            <ul class="">
+                <li class="mb-1"><i class="fa fa-map-marker"></i> {{allEvents.0.location}}</li>
+                <li class="mb-1"><i class="fa fa-clock-o"></i>  {{allEvents.0.date}} | {{allEvents.0.time}}</li>
+            </ul>
+            <div class="deadline text-center">
+                <div class="deadline-format text-center me-4">
+                    <h4 class="days">00</h4>
+                    <span>Days</span>
+                </div>
+                <div class="deadline-format text-center me-4">
+                    <h4 class="hours">00</h4>
+                    <span>Hours</span>
+                </div>
+                <div class="deadline-format text-center me-4">
+                    <h4 class="minutes">00</h4>
+                    <span>Mins</span>
+                </div>
+                <div class="deadline-format text-center me-4">
+                    <h4 class="seconds">00</h4>
+                    <span>Secs</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        setRemainingTime();
+    });
+    const upcomingEvent = document.querySelector('.upcoming-event');
+    const items = document.querySelectorAll('.deadline-format h4');
+    function setRemainingTime(){
+        let todaysDate = new Date();
+        let year = parseInt(`{{allEvents.0.date.year}}`);
+        let month = parseInt(`{{allEvents.0.date.month}}`);
+        let days = parseInt(`{{allEvents.0.date.day}}`);
+        let hours = parseInt(`{{allEvents.0.time.hour}}`);
+        let minutes = parseInt(`{{allEvents.0.time.minute}}`);
+        let seconds = parseInt(`{{allEvents.0.time.second}}`);
+        let eventDate = new Date(year, month-1, days, hours, minutes, seconds, 0);
+        const oneDay = 24 * 60 * 60 * 1000;
+        const oneHour = 60 * 60 * 1000;
+        const oneMinute = 60 * 1000;
+        const t = eventDate.getTime() - todaysDate.getTime();
+        days = t / oneDay;
+        days = Math.floor(days);
+        hours = Math.floor((t % oneDay) / oneHour);
+        minutes = Math.floor((t % oneHour) / oneMinute);
+        seconds = Math.floor((t % oneMinute) / 1000);
+        const values = [days, hours, minutes, seconds];
+        function format(item) {
+            if (item < 10) {
+                return (item = `0${item}`);
+            }
+            return item;
+        }
+        items.forEach(function (item, index) {
+            item.innerHTML = format(values[index]);
+        });
+        if (t < 0) {
+            clearInterval(countdown);
+            upcomingEvent.innerHTML = `<h2 class="expired text-center">There are no upcoming Events</h2>`;
+        }
+
+        }   
+        
+        
+        let countdown = setInterval(setRemainingTime, 1000);
+
+
+</script>
+{% endblock %}
+

@@ -1,0 +1,252 @@
+{% extends 'web/basicLayout.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block ishome %}active{% endblock %}
+
+{% block csslinks %}
+{% load static%}
+<link rel="stylesheet" href="{% static 'web/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'web/css/counter.css' %}">
+
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+
+<div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'web/imgs/carousel-1.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <div class="home-content">
+                    <h1>Save The Children</h1>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="center-contents">
+                        <button type="button" class="btn btn-primary hover-btn">
+                            View Causes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'web/imgs/carousel-2.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Save The Children</h1>
+                <p>Some representative placeholder content for the second slide.</p>
+                <div class="center-contents">
+                    <button type="button" class="btn btn-primary hover-btn">
+                        Donate Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'web/imgs/carousel-3.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Become a Volunteer!</h1>
+                <p>Some representative placeholder content for the third slide.</p>
+                <div class="center-contents">
+                    <button type="button" class="btn btn-primary hover-btn">
+                        Join Us Now!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Welcome Section -->
+<div class="welcome container">
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="welcome-box  welcome-text">
+                <div class="text">
+                    <h2>Welcome to Come Lets Share</h2>
+                    <h6>Lorem ipsum dolor sit amet.</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In fugit, ullam laborum voluptas soluta
+                        ab.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, molestiae?</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 ">
+            <!-- <div class="welcome-box" id="picture">
+                <div class="picture-box">
+                    <img class="img-fluid" src="{% static 'web/imgs/welcome.jpg' %}">
+                </div>
+            </div> -->
+            <div class="counter-up">
+                <div class="content row ">
+                    <div class="  col-sm-6">
+                        <div class="icon"><i class="fas fa-history" style="font-size: 40px;"></i></div>
+                        <div class="counter dd">0</div>
+                        <div class="text">Donation Drives</div>
+                    </div>
+                    <div class="  col-sm-6">
+                        <div class="icon"><i class="fas fa-gift" style="font-size: 40px;"></i></div>
+                        <div class="counter do">0</div>
+                        <div class="text">Donors</div>
+                    </div>
+                    <div class="  col-sm-6">
+                        <div class="icon"><i class="fas fa-users" style="font-size: 40px;"></i></div>
+                        <div class="counter vo">0</div>
+                        <div class="text">Volunteers</div>
+                    </div>
+                    <div class="  col-sm-6">
+                        <div class="icon"><i class="fas fa-award" style="font-size: 40px;"></i></div>
+                        <div class="counter ng">0</div>
+                        <div class="text">NGOs in contact</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="parallax center-contents parallax-contents">
+    <div class="container-lg">
+        <h1>Past Events</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus commodi veritatis culpa tenetur, in aspernatur.</p>
+        <!-- <div class="center-contents">
+            <button type="button" class="btn btn-primary hover-btn">
+                Past Events
+            </button>
+        </div> -->
+    </div>
+</div>
+<div class="container past-events">
+    <script>
+        // console.log(`{{allEvents.0.date.time}}`);
+    </script>
+
+    <div class="row my-4">
+    {% for event in past4Events %}
+        <div class="col-lg-6">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-5  ">
+                        <div class="onhoverimg">
+                            <a class="" href="">
+                                <img src="/media/{{event.main_image}} " class="event-card-img   rounded-bottom rounded-top" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-7">
+                        <!-- <div class="card-body">
+                            <h5 class="card-title"><a href="{% url 'singleEvent' event.id %}">{{event.title}}</a></h5>
+                            <ul class="card-text">
+                                <li class="mb-1"><i class="fa fa-map-marker"></i> {{event.location}}</li>
+                                <li class="mb-1"><i class="fa fa-clock-o"></i> {{event.date}} | {{event.time}}</li>
+                            </ul>
+                            <p class="card-text">{{event.description}}<br><a href="#">Read More</a></p>
+
+                        </div> -->
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="{% url 'singleEvent' event.id %}">{{event.title}}</a></h5>
+                            <ul class="card-text">
+                                <li class="mb-1"><i class="fa fa-map-marker"></i> {{event.location}}</li>
+                                <li class="mb-1"><i class="fa fa-clock-o"></i> {{event.date}} | {{event.time}}</li>
+                            </ul>
+                            <p class="card-text"></p>
+                            <a href="{% url 'singleEvent' event.id %}" class="ps-2">Know More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:2 and forloop.counter > 0 and not forloop.last %}
+      </div><div class="row my-4">
+        {% endif %}
+    {% endfor %}
+    </div>
+    </div>
+
+
+<div class="parallax center-contents parallax-contents">
+    <div class="container-lg">
+        <h1>Become a Volunteer!</h1>
+        <p>Some representative placeholder content for the third slide.</p>
+        <div class="center-contents">
+            <a href="{% url 'contactUs' %}" class="no-text-decoration">
+                <button type="button" class="btn btn-primary hover-btn">
+                    Join Us Now!
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block js %}
+function animateValue(id, start, end, duration) {
+if (start === end) return;
+var range = end - start;
+var current = start;
+var increment = end > start ? 1 : -1;
+var stepTime = Math.abs(Math.floor(duration / range));
+var obj = document.getElementsByClassName(id)[0];
+var timer = setInterval(function () {
+current += increment;
+obj.innerHTML = current;
+if (current == end) {
+clearInterval(timer);
+}
+}, stepTime);
+}
+var runcounter = false;
+document.addEventListener('DOMContentLoaded',()=>{
+countersect = document.querySelector('.vo');
+var rect = countersect.getBoundingClientRect(), scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// console.log(y);
+// console.log("y: ",rect.top + scrollTop, " Window : ",$(window).scrollTop() + $(window).height());
+if ($(window).scrollTop() + $(window).height() >= (rect.top + scrollTop) && runcounter==false) {
+// alert("near bottom!");
+runcounter=true;
+animateValue('dd', 0, 20, 1500);
+animateValue("do", 0, 100, 1500);
+animateValue("vo", 0, 47, 1500);
+animateValue("ng", 0, 8, 1500);
+}
+});
+$(window).scroll(function () {
+countersect = document.querySelector('.vo');
+var rect = countersect.getBoundingClientRect(), scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// console.log(y);
+// console.log("y: ",rect.top + scrollTop, " Window : ",$(window).scrollTop() + $(window).height());
+if ($(window).scrollTop() + $(window).height() >= (rect.top + scrollTop) && runcounter==false) {
+// alert("near bottom!");
+runcounter=true;
+animateValue('dd', 0, 20, 1500);
+animateValue("do", 0, 100, 1500);
+animateValue("vo", 0, 47, 1500);
+animateValue("ng", 0, 8, 1500);
+}
+});
+{% endblock %}

@@ -1,0 +1,106 @@
+
+
+.carousel-caption {
+    bottom: 4.25rem;
+}
+
+#about.section {
+    padding-bottom: 0;
+}
+.section {
+    position: relative;
+    padding: 60px 0;
+}
+/* .past-events .row .col-lg-6{
+    border: none;
+    border-color: white;
+    margin-bottom: ;
+}
+.past-events .row .col-lg-6:hover{
+    transition: all 1s ;
+    border-radius: 1rem;
+    border: 1px solid #4cc7d6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} */
+.parallax-contents .container-lg{
+    /* font-family: 'Roboto', sans-serif; */
+    color: whitesmoke;
+}
+.parallax-contents .container-lg h1, .parallax-contents .container-lg p{
+    text-align: center;
+
+}
+.event-card-img{
+    width : 100%;
+    min-height: 12rem;
+}
+    
+.rounded-top {
+  border-top-left-radius: .75rem!important;
+  border-top-right-radius: .75rem!important;
+}
+.rounded-bottom {
+  border-bottom-right-radius: .75rem!important;
+  border-bottom-left-radius: .75rem!important;
+}
+.eventhead{
+    position:relative;
+    top:60%;
+    right:48.5%;
+    margin-left: 10rem;
+    color: white;
+}
+.card-text{
+    padding-left: 0;
+    text-align: justify;
+  }
+  .card-body h5{
+    font-weight: 400;
+  }
+  .card-body a:link {
+    color:black;
+    text-decoration: none;
+  }
+  
+  /* visited link */
+.card-body a:visited {
+    color:black;
+    text-decoration: none;
+  }
+  .card-body a:hover {
+    color:  #4cc7d6;
+    text-decoration: none;
+  }
+  .eventsul a:link {
+    color:white;
+    text-decoration: none;
+  }
+  .eventsul a:visited {
+    color:white;
+    text-decoration: none;
+  }
+  .eventsul a:hover {
+    color: #4cc7d6;
+    text-decoration: none;
+  }
+
+  
+  .eventsul li{
+    display:inline;
+    list-style-type: none;
+  }
+  .fa{
+   color: #4cc7d6;
+
+  }
+  .card{
+    border:none;
+}
+
+ul{
+    list-style-type: none;
+}
+.onhoverimg{
+    position: relative;
+    margin-top: 1.67em;
+  } 

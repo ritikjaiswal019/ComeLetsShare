@@ -1,0 +1,65 @@
+.event-head{
+    background-image: url('../imgs/background-2.jpg');
+    background-size: cover;
+    height:20rem;
+    padding: 5rem 0;
+}
+.event-head .container{
+    position: relative;
+    top: 60%;   
+    padding-left: 28px;
+
+}
+.event-head .container h1{
+    color: white;
+}
+.event-head .container ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding-left: 0;
+}
+.event-head .container ul li{
+    padding-right : 0.5rem ;
+    color:white;
+}
+.event-head .container ul li a{
+    text-decoration: none;
+    color:white;
+}
+.event-head .container ul li a:hover{
+    color: #4cc7d6;
+}
+.upcoming-event{
+    margin: 2.5rem 0;
+}
+.upcoming-event .col-lg-6{
+    padding: 0 1.5rem;
+}
+.upcoming-event .event-img img{
+    width: 100%;
+    border-radius: .75rem;
+}
+.event-content ul{
+    list-style: none;
+    margin-top: 1rem;
+}
+.event-content ul li i{
+    color: #4cc7d6;
+}
+.deadline{
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+}
+.deadline-format{
+    display: grid;
+    width: 5rem;
+    height: 5rem;
+    background-color: #4cc7d6;
+    color: white;
+}
+.deadline-format h4{
+    margin-top: 0.6rem;
+    margin-bottom: 0;
+}

@@ -1,0 +1,90 @@
+{% extends 'web/basicLayout.html' %}
+
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block csslinks %}
+{% load static%}
+<link rel="stylesheet" href="{% static 'web/css/contact.css' %}">
+{% endblock %}
+
+{% block iscontact %}active{% endblock %}
+
+
+{% block body %}
+<div class="contactus">
+    <div class="container-lg">
+        <h2 id="contact-heading">Contact Us / Suggest Something / Volunteer with Us</h2>
+        <form action="{% url 'submit-Query' %}" method="POST">
+            {% csrf_token %}
+            <div class="contact-form row contact-newsletter">
+                <div class="form-floating mb-3 col-md-4">
+                    <input type="name" name="name" class="form-control" id="floatingName" placeholder="Name" >
+                    <label for="floatingName">Name<span class="important-ast">*</span></label>
+                </div>
+                <div class="form-floating mb-3 col-md-4">
+                    <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="name@example.com" >
+                    <label for="floatingEmail">Email address<span class="important-ast">*</span></label>
+                </div>
+                <div class="form-floating mb-3 col-md-4">
+                    <input type="tel" pattern="" name="contact" class="form-control" id="floatingContact" placeholder="+91 " >
+                    <label for="floatingContact">Contact<span class="important-ast">*</span></label>
+                </div>
+                <div class="select-container col-md-8 mb-3">
+                    <select class="form-select form-select-md" name="query" aria-label="Default select example" >
+                        <option selected disabled>Select a Query<span class="important-ast">*</span></option>
+                        <option value="1">Contact Us</option>
+                        <option value="2">Suggest Something</option>
+                        <option value="3">Volunteer with Us</option>
+                    </select>
+                </div>
+                <div class="form-floating col-md-8">
+                    <textarea class="form-control" name="comments" placeholder="Leave a comment here" id="floatingTextarea2"
+                        style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Comments</label>
+                </div>
+                <div class="all-checks">
+                    <div class="form-check">
+                        <input class="form-check-input" name="subscribemail" type="checkbox" value="" id="subscribeMail">
+                        <label class="form-check-label" for="subscribeMail">
+                          Do you want to subscribe for latest updates on mail
+                        </label>
+                      
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="subscribewhatsapp" type="checkbox" value="" id="Whatsapp" >
+                        <label class="form-check-label" for="Whatsapp">
+                            Do you want to join us on Whatsapp
+                        </label>
+                    </div>
+                    <button type="submit" class="primary-button submit-query-btn">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    const submitbtn = document.querySelector('.submit-query-btn');
+    const form = document.querySelector('.contact-form');
+    const formSelect = document.querySelector('.form-select');
+    const tel = document.querySelector('#floatingContact');
+
+    submitbtn.addEventListener('click',function(e){
+        e.preventDefault();
+        let errors = "";
+        if(tel.value.length!=10){
+            errors = `Enter valid mobile number in the format 79XXXXXX71\n\n`;
+        }
+        if(formSelect.value === "Select a Query*")
+            errors += `You must select a query.`;
+        if(errors != "")
+            alert(`${errors}`);
+        else{
+            alert("Your response has been successfully recorded");
+            form.parentElement.submit();
+        }
+    })
+</script>
+
+{% endblock %}

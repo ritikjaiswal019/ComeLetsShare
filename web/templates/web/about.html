@@ -1,0 +1,261 @@
+{% extends 'web/basicLayout.html' %}
+
+{% block csslinks %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'web/css/about.css' %}">
+<link rel="stylesheet" href="{% static 'web/css/counter.css' %}">
+{% endblock %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block isabout %}active{% endblock %}
+
+
+{% block body %}
+<div class="intro">
+    <div class="outer">
+        <div class="center">
+            <h2 class="info">Come Lets Share</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, aut!</p>
+            <!-- <button type="button" class="btn btn-primary hover-btn">Our Team</button> -->
+        </div>
+    </div>
+</div>
+<div class="welcome container">
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="welcome-box  welcome-text">
+                <div class="text">
+                    <h2>Welcome to Come Lets Share</h2>
+                    <h6>Lorem ipsum dolor sit amet.</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In fugit, ullam laborum voluptas soluta
+                        ab.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, molestiae?</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 ">
+            <!-- <div class="welcome-box" id="picture">
+                <div class="picture-box">
+                    <img class="img-fluid" src="/static/web/imgs/welcome.jpg">
+                </div>
+            </div> -->
+            <div class="counter-up">
+                <div class="content row ">
+                    <div class="  col-sm-6">
+                        <div class="icon"><i class="fas fa-history" style="font-size: 40px;"></i></div>
+                        <div class="counter dd">20</div>
+                        <div class="text">Donation Drives</div>
+                    </div>
+                    <div class="  col-sm-6">
+                        <div class="icon"><i class="fas fa-gift" style="font-size: 40px;"></i></div>
+                        <div class="counter do">100</div>
+                        <div class="text">Donors</div>
+                    </div>
+                    <div class="  col-sm-6">
+                        <div class="icon"><i class="fas fa-users" style="font-size: 40px;"></i></div>
+                        <div class="counter vo">47</div>
+                        <div class="text">Volunteers</div>
+                    </div>
+                    <div class="  col-sm-6">
+                        <div class="icon"><i class="fas fa-award" style="font-size: 40px;"></i></div>
+                        <div class="counter ng">8</div>
+                        <div class="text">NGOs in contact</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+    
+    <div class="containr">
+        <h2>Our Founder</h2>
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="{% static 'web/imgs/founder.jpg' %}">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Siddharth Kakani</h3>
+                            <h4 class="title">Founder</h4>
+                        </div>
+                        <ul class="social">
+                            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h2 class="coreteam">Our Core Team</h2>
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="{% static 'web/imgs/Emp2.jpg' %}">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Michele Miller</h3>
+                            <h4 class="title">Core Team Member</h4>
+                        </div>
+                        <ul class="social">
+                            
+                            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="{% static 'web/imgs/Emp1.jpg' %}">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Patricia Knott</h3>
+                            <h4 class="title">Core Team Member</h4>
+                        </div>
+                        <ul class="social">
+                            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="{% static 'web/imgs/Emp3.jpg' %}">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Justin Ramos</h3>
+                            <h4 class="title">Core Team Member</h4>
+                        </div>
+                        <ul class="social">
+                            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="{% static 'web/imgs/Emp2.jpg' %}">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Michele Miller</h3>
+                            <h4 class="title">Core Team Member</h4>
+                        </div>
+                        <ul class="social">
+                            
+                            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="{% static 'web/imgs/Emp3.jpg' %}">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Patricia Knott</h3>
+                            <h4 class="title">Core Team Member</h4>
+                        </div>
+                        <ul class="social">
+                            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="{% static 'web/imgs/Emp1.jpg' %}">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Justin Ramos</h3>
+                            <h4 class="title">Core Team Member</h4>
+                        </div>
+                        <ul class="social">
+                            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    
+    <div class="data">
+        <div class="row align-items-center">
+            <div class="col-lg-6" id="drives">
+                <h2>20</h2>
+                <h6>Drives done</h6>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis temporibus laudantium blanditiis,
+                    aspernatur optio consequatur.</p>
+                    <!-- <div class="center-contents">
+                        <button type="button" class="btn btn-primary hover-btn">Check here</button>
+                    </div> -->
+                </div>
+                <div class="col-lg-6" id="we">
+                    <h2>Who are We?</h2>
+                    <h6>Drives done</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugit enim placeat neque veritatis qui
+                        accusantium sed error non voluptatem.</p>
+                        <!-- <button type="button" class="btn btn-primary hover-btn">Our Team</button> -->
+                    </div>
+                    
+                </div>
+            </div>
+        <div class="continer">
+            
+            <div class="row center-contents">
+                <div class="col-sm-3">
+                    <i class="far fa-lightbulb fa-2x centericon"></i>
+                    
+                    <h3 class="hicon">Our Vision</h3>
+                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis reiciendis voluptas, ut expedita
+                        delectus distinctio.</p>
+                        <p><a href="" class="no-text-decoration">Learn More</a></p> -->
+                    </div>
+                    <div class="col-sm-3">
+            <i class="fas fa-money-check fa-2x centericon"></i>
+            
+            <h3 class="hicon">Make Donations</h3>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis reiciendis voluptas, ut expedita
+                delectus distinctio.</p>
+                <p><a href="" class="no-text-decoration">Learn More</a></p> -->
+            </div>
+            <div class="col-sm-3">
+                <i class="fa fa-user-circle-o fa-2x centericon"></i>
+                
+                <h3 class="hicon">Be A Volunteer</h3>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis reiciendis voluptas, ut expedita
+                    delectus distinctio.</p> -->
+                    <!-- <p><a href="{% url 'contactUs' %}" class="no-text-decoration">Learn More</a></p> -->
+                </div>
+            </div>
+            
+            
+        </div>
+        {% endblock %}
